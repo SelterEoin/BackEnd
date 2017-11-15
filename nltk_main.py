@@ -1,8 +1,5 @@
-from nltk.corpus import stopwords, wordnet
-from nltk import FreqDist,sent_tokenize, word_tokenize
-import json
-from tokenize_training import training
 
+from nltk import sent_tokenize
 # funkcja odpowiadajaca za znalezienie kliknietego slowa i zdania w akapicie
 # przyjmujaca jako cursor_position pozycje kursora w edytorze oraz tekst (akapit)
 #i zwracajaca klikniete slowo i klikniete zdanie
