@@ -2,12 +2,28 @@ from flask import Flask, render_template, jsonify, request
 from nltk_main import click_event_processing2
 from owlready2 import *
 app = Flask(__name__)
-onto = get_ontology("file://D:/INZ/3w1.owl").load()
+#onto = get_ontology("file://D:/INZ/3w1.owl").load()
 #onto = get_ontology("file://D:/INZ/pizza.xml").load()
+
 
 @app.route("/")
 def index():
     return render_template('index.html')
+
+@app.route("/OWL_DATA_LIB_button1")
+def OWL_DATA_LIB_button1():
+    global onto
+    onto = get_ontology("file://D:/INZ/pizza.xml").load()
+
+@app.route("/OWL_DATA_LIB_button2")
+def OWL_DATA_LIB_button2():
+    global onto
+    onto = get_ontology("file://D:/INZ/3w1.owl").load()
+
+@app.route("/OWL_DATA_LIB_button3")
+def OWL_DATA_LIB_button3():
+    global onto
+    onto = get_ontology("file://D:/INZ/3w1.owl").load()
 
 @app.route('/OWL_DATA_CLASSES')
 def OWL_DATA_CLASSES():
