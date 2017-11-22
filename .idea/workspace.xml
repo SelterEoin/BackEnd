@@ -18,8 +18,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="54" column="27" lean-forward="false" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+            <state relative-caret-position="645">
+              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test2.py">
+      <file leaf-file-name="one.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/one.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            <state relative-caret-position="294">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -40,8 +40,20 @@
       <file leaf-file-name="nltk_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nltk_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="666">
+              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OWLtest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OWLtest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,10 +97,16 @@
         <option value="$PROJECT_DIR$/speech_part.py" />
         <option value="$PROJECT_DIR$/../bump/app.py" />
         <option value="$PROJECT_DIR$/tokenize_training.py" />
-        <option value="$PROJECT_DIR$/nltk_main.py" />
         <option value="D:/INZ/bump/app.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/test2.py" />
+        <option value="$PROJECT_DIR$/slowo.py" />
+        <option value="$PROJECT_DIR$/123.py" />
+        <option value="$PROJECT_DIR$/TEST.py" />
+        <option value="$PROJECT_DIR$/OWLtest.py" />
+        <option value="$PROJECT_DIR$/all.py" />
+        <option value="$PROJECT_DIR$/nltk_main.py" />
+        <option value="$PROJECT_DIR$/one.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -113,7 +131,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -128,7 +146,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,10 +154,11 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Selter\Documents\GitHub\BackEnd" />
       <recent name="C:\Users\Dell\PycharmProjects\natural_language_processing" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dell\PycharmProjects\natural_language_processing" />
     </key>
   </component>
@@ -155,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test2">
+  <component name="RunManager" selected="Python.all">
     <configuration default="false" name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -174,7 +193,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="nltk_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="all" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -186,49 +205,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="natural_language_processing" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nltk_main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/all.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../bump" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="natural_language_processing" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../bump/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="app (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="D:/INZ/bump" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="natural_language_processing" />
-      <option name="SCRIPT_NAME" value="D:/INZ/bump/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="123" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -240,7 +223,43 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="natural_language_processing" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/123.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TEST" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="natural_language_processing" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TEST.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="OWLtest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="natural_language_processing" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OWLtest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -344,18 +363,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.app" />
-      <item index="1" class="java.lang.String" itemvalue="Python.nltk_main" />
-      <item index="2" class="java.lang.String" itemvalue="Python.app (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.app (2)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.all" />
+      <item index="2" class="java.lang.String" itemvalue="Python.123" />
+      <item index="3" class="java.lang.String" itemvalue="Python.TEST" />
+      <item index="4" class="java.lang.String" itemvalue="Python.OWLtest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.all" />
         <item index="1" class="java.lang.String" itemvalue="Python.app" />
-        <item index="2" class="java.lang.String" itemvalue="Python.app (2)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.app (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.nltk_main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.OWLtest" />
+        <item index="3" class="java.lang.String" itemvalue="Python.TEST" />
+        <item index="4" class="java.lang.String" itemvalue="Python.123" />
       </list>
     </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -397,14 +416,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19652551" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2591051" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29760665" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29760665" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39854318" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -439,23 +458,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/interface.py" />
-    <entry file="file://$PROJECT_DIR$/example.txt" />
-    <entry file="file://$PROJECT_DIR$/speech_part.py" />
-    <entry file="file://$PROJECT_DIR$/nltk_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="35" column="28" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tokenize_training.py" />
-    <entry file="file://$PROJECT_DIR$/interface.py" />
     <entry file="file://$PROJECT_DIR$/example.txt" />
     <entry file="file://$PROJECT_DIR$/speech_part.py" />
     <entry file="file://$PROJECT_DIR$/nltk_main.py">
@@ -564,26 +571,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nltk_main.py">
+    <entry file="file://$PROJECT_DIR$/test2.py" />
+    <entry file="file://$PROJECT_DIR$/slowo.py" />
+    <entry file="file://$PROJECT_DIR$/123.py" />
+    <entry file="file://$PROJECT_DIR$/TEST.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="189">
+          <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OWLtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
+    <entry file="file://$PROJECT_DIR$/all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        <state relative-caret-position="420">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nltk_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/one.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="54" column="27" lean-forward="false" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+        <state relative-caret-position="645">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>

@@ -1,5 +1,5 @@
-
 from nltk import sent_tokenize
+import re
 # funkcja odpowiadajaca za znalezienie kliknietego slowa i zdania w akapicie
 # przyjmujaca jako cursor_position pozycje kursora w edytorze oraz tekst (akapit)
 #i zwracajaca klikniete slowo i klikniete zdanie
@@ -36,4 +36,29 @@ def click_event_processing2(cursor_position, text):
         # zwrocenie kliknietego slowa i zdania
         return [l[word_counter-1], sentences[j-1]]
 
+def delete_stopwords_for_one_word(word):
+    if word[-1] == '.':
+        word = word[:-1] # usuwa kropke na koncu
+    elif word[-1] == ',':
+            word = word[:-1]  # usuwa kropke na koncu
+    else:
+        return word
+   #word = word.split('.') # dzieli skladnik na kropce
+   #word = [i.lower() for i in word] #obniza 2 czesci
+   #word = '.'.join(word) # laczy je kropka
+    return word
+"""
+def lower_words_forlist(text):
+    text = re.sub("[^a-zA-Z0-9]", " ", text)
+    text=text.split()
+    text = [i.lower() for i in text]
+    text=set(text)
+    return text"""
 
+def OWLlist_to_NAMESlist(list):
+    new_list = []
+    for i in range(len(list)):
+        list[i] = list[i].replace(".", ",", 1)
+        n = list[i].split(",")
+        new_list.append(n[1])
+    return new_list
