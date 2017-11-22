@@ -70,13 +70,15 @@ def one_word():
     #przerabiamy onto_list na nazwy czyli z [guns.bow] na [bow]
     one_word_resp =(OWLlist_to_NAMESlist(onto_list))
     #DLA KAZDEGO ELEMENTU W LISCIE onto_word_resp
+    #is_a szuka pod class danego elementu
     #wywołujemy IS_A_LIST=(eval("onto.search(is_a= onto." + onto_word_resp[i] + ")")) czyli
     #przypisujemy wynik czyli liste do IS_A_LIST z metody szukania po danym elemencie z onto_word_resp
     #nastepnie dla listy IS_A_LIST wywołujemy (OWLlist_to_NAMESlist(IS_A_LIST) i przypisujemy do np listX
-    #nastpenie przechodzimy po kazdym elemencie listy listX i jeżeli jakiś element jest taki sam co słowo to dopisujemy CALA DANA LISTE listX Z
-    #KTOREJ SZUKALISMY DO one_word_list2 przez extend
+    #nastpenie przechodzimy po kazdym elemencie listy listX i jeżeli jakiś element jest taki sam co słowo to dopisujemy element i po ktorym szukalismy
+    #z one_word_resp do listy one_word_list2
     #i tak w kółko aż przejdzie przez wszykie elementy onto_word_resp
-    #na koniec usuwamy powtorzenia z one_word_list2 przez set i przerabimy na jej elementy na string
+    #poźniej dodajemy wywowałnie na słowie metoda is_a jako lista IS_A_LIST2 do one_word_list2
+    #poźniej usuwamy powtorzenia z one_word_list2 przez set i przerabimy na jej elementy na string
     #oraz uzywamy jsonify zeby zwrocic liste do Fronendu
     # front musi dostac response pod nazwa one_word_list
     # pseudo kod pod ponizej HELP !
@@ -86,9 +88,10 @@ def one_word():
         listX =(OWLlist_to_NAMESlist(IS_A_LIST))
         for j in listX:
             if listX[j]==slowo:
-                one_word_list2.extend(listX)
+                one_word_list2.extend(one_word_resp[i])
             else: sprawdz inne j z listX
-
+    IS_A_LIST2=(eval("onto.search(is_a= onto." + slowo + ")"))
+    one_word_list2.extend(IS_A_LIST2)
     one_word_list2=set(one_word_list2)
     one_word_list2 = [str(i) for i in one_word_list]
     return jsonify(one_word_list=one_word_list2)
