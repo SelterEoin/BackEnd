@@ -4,7 +4,6 @@ from owlready2 import *
 from nltk_main import delete_stopwords_for_one_word,OWLlist_to_NAMESlist
 app = Flask(__name__)
 
-
 @app.route("/")
 def index():
     return render_template('index.html')
