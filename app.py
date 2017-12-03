@@ -269,8 +269,7 @@ def one_word():
 @app.route('/search_all')
 def search_all():
     text0 = request.args.get('content', 0, type=str)
-    text=text0.capitalize()
-    text2 = text.replace(",", "")
+    text2 = text0.replace(",", "")
     text3 = text2.replace('.', '')
     text4 = text3.split()
     onto_list_classes_raw = list(onto.classes())
