@@ -1,9 +1,9 @@
 from owlready2 import *
-path = "file://D:/INZ/People.owl"
+path = "file://D:/INZ/Guns.owl"
 onto = get_ontology(path).load()
 
 ###########################
-value_from_onclick = 'Anna'
+value_from_onclick = 'Anaconda'
 ###########################
 
 def one_word_analysis():
@@ -17,7 +17,6 @@ def one_word_analysis():
         return cut_classes
     cut_classes_list = cut_the_class()   # wycieta lista wszystkich klas ze slownika
 
-
     individuals = list(onto.individuals())#GLOBAL LIST
     def cut_the_individual():
         cut_individuals = list()
@@ -25,7 +24,16 @@ def one_word_analysis():
             cut_individuals.append(str(every_individual).split('.')[1])
         return cut_individuals
     cut_individual_list = cut_the_individual()  # wycieta lista wszystkich indywiduów ze slownika
+######!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+    cut_the_object_property_list= list(onto.object_properties())
+    def cut_the_object_property():
+        cut_object_property = list()
+        for every_class in cut_the_object_property_list:
+            cut_object_property.append(str(every_class).split('.')[1])
+        return cut_object_property
+#######!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     def classes_with_power():  # funkcja do przypisywania klasom "sily". Potrzebne tylko do funkcji sortujacej.
         power_of_classes = dict()
@@ -115,8 +123,7 @@ def one_word_analysis():
                 pass
             else:
                 result.append(str(every_class).split('.')[1])
-        print(result)
-        print(type(result))
+
         return result
 
 
@@ -139,8 +146,38 @@ def one_word_analysis():
         for every_class in result:
             result2.append(str(every_class).split('.')[1])
         return result2
+    ######################
+    ######################
+    ######################
+
+    properties = cut_the_object_property()
+    with onto:
+        class temporary(Thing):
+            pass
+
+    def relations():
+        temp = temporary(str(value_from_onclick))
+        temporary_list = list()
+        for every_property in properties:
+            temp2 = getattr(temp, every_property)
+            if (temp2) == None:
+                pass
+            elif len(temp2) == 0:
+                pass
+            else:
+                for i in range(len(temp2)):
+                    temp3 = list(temp2)
+                    a = value_from_onclick
+                    b = every_property
+                    c = temp3[i]
+                    temporary_list.append((str(a) + ' ' + (str(b) + ' ' + str(c).split('.')[-1])))
+        relations_result = list(set(temporary_list))
+        return relations_result
 
 
+    ##################################################
+    ###################################################
+    ###################################################
 
     LIST=[]
 
@@ -152,6 +189,8 @@ def one_word_analysis():
             LIST.append(INDI_val1)
             INDI_val2=instances_from_the_same_class()
             LIST.append(INDI_val2)
+            INDI_val3=relations()
+            LIST.append(INDI_val3)
         else:
             pass
 
@@ -170,6 +209,5 @@ def one_word_analysis():
 
     return LIST
 
-
 zmienna=one_word_analysis()
-print(zmienna)
+print(zmienna[2])

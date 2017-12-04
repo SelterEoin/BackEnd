@@ -85,7 +85,15 @@ def one_word():
                 cut_individuals.append(str(every_individual).split('.')[1])
             return cut_individuals
 
-        cut_individual_list = cut_the_individual()  # wycieta lista wszystkich indywiduów ze slownika
+        cut_individual_list = cut_the_individual()  # wycieta lista wszystkich indywiduów ze slownika\
+
+        cut_the_object_property_list = list(onto.object_properties())
+
+        def cut_the_object_property():
+            cut_object_property = list()
+            for every_class in cut_the_object_property_list:
+                cut_object_property.append(str(every_class).split('.')[1])
+            return cut_object_property
 
         def classes_with_power():  # funkcja do przypisywania klasom "sily". Potrzebne tylko do funkcji sortujacej.
             power_of_classes = dict()
@@ -183,6 +191,30 @@ def one_word():
                     result.append(str(every_class).split('.')[1])
             return result
 
+        properties = cut_the_object_property()
+        with onto:
+            class temporary(Thing):
+                pass
+
+        def relations():
+            temp = temporary(str(value_from_onclick))
+            temporary_list = list()
+            for every_property in properties:
+                temp2 = getattr(temp, every_property)
+                if (temp2) == None:
+                    pass
+                elif len(temp2) == 0:
+                    pass
+                else:
+                    for i in range(len(temp2)):
+                        temp3 = list(temp2)
+                        a = value_from_onclick
+                        b = every_property
+                        c = temp3[i]
+                        temporary_list.append((str(a) + ' ' + (str(b) + ' ' + str(c).split('.')[-1])))
+            relations_result = list(set(temporary_list))
+            return relations_result
+
         def classes_below():
             eval_code = "onto.search(subclass_of= onto." + value_from_onclick + ")"
             result = eval(eval_code)
@@ -200,6 +232,8 @@ def one_word():
                 LIST.append(INDI_val1)
                 INDI_val2 = instances_from_the_same_class()
                 LIST.append(INDI_val2)
+                INDI_val3 = relations()
+                LIST.append(INDI_val3)
             else:
                 pass
 
@@ -243,11 +277,13 @@ def one_word():
     ####################################################
     sorted_above_INDI_list=[]
     instances_from_the_same_class_list=[]
+    relations_result_list=[]
     #IF INDIVIDUAL
     for every in cut_individual_list:
         if every == value_from_onclick:
             sorted_above_INDI_list = one_word_analysis_LIST[0]
             instances_from_the_same_class_list = one_word_analysis_LIST[1]
+            relations_result_list=one_word_analysis_LIST[2]
         else:
             pass
     #IF CLASS
@@ -263,7 +299,7 @@ def one_word():
         else:
             pass
 
-    return jsonify(subclass_of_list_response=subclass_of_class_list,classes_above_list_response=classes_above_list,instances_from_the_clicked_class_list_response=instances_from_the_clicked_class_list,sorted_above_INDI_list_response=sorted_above_INDI_list,instances_from_the_same_class_list_response=instances_from_the_same_class_list)
+    return jsonify(subclass_of_list_response=subclass_of_class_list,classes_above_list_response=classes_above_list,instances_from_the_clicked_class_list_response=instances_from_the_clicked_class_list,sorted_above_INDI_list_response=sorted_above_INDI_list,instances_from_the_same_class_list_response=instances_from_the_same_class_list,relations_result_list_response=relations_result_list)
 
 
 @app.route('/search_all')
