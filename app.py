@@ -1,8 +1,8 @@
 from flask import Flask, render_template, jsonify, request
 from nltk_main import click_event_processing2
 from owlready2 import *
+from collections import defaultdict
 app = Flask(__name__)
-
 
 @app.route("/")
 def index():
@@ -11,17 +11,13 @@ def index():
 @app.route("/OWL_DATA_LIB_button1")
 def OWL_DATA_LIB_button1():
     global onto
-    onto = get_ontology("file://D:/INZ/Places.owl").load()
+    onto = get_ontology("file://D:/INZ/people.owl").load()
 
 @app.route("/OWL_DATA_LIB_button2")
 def OWL_DATA_LIB_button2():
     global onto
-    onto = get_ontology("file://D:/INZ/Guns.owl").load()
+    onto = get_ontology("file://D:/INZ/guns.owl").load()
 
-@app.route("/OWL_DATA_LIB_button3")
-def OWL_DATA_LIB_button3():
-    global onto
-    onto = get_ontology("file://D:/INZ/People.owl").load()
 
 @app.route('/OWL_DATA_CLASSES')
 def OWL_DATA_CLASSES():
@@ -54,8 +50,11 @@ def one_word():
     kursor_id = request.args.get('ID', 1, type=str)
     text = request.args.get('content', 1, type=str)
     res =  click_event_processing2(kursor_id, text)
-    word=res[0]
-    value_from_onclick=word.capitalize()
+    text_from_front=res[0]
+    text_nocom = text_from_front.replace(",", "")
+    text_nocom_and_dots = text_nocom.replace('.', '')
+    value_from_onclick=text_nocom_and_dots.capitalize()
+
 
 
 
@@ -96,14 +95,10 @@ def one_word():
             return cut_object_property
 
         def classes_with_power():  # funkcja do przypisywania klasom "sily". Potrzebne tylko do funkcji sortujacej.
-            power_of_classes = dict()
-            list_of_classes_with_powers = list()
+            classes = classes_above_class()
+            list_of_classes_with_powers = []
             for one_class in classes:
-                cutted_class = str(one_class).split('.')[-1]
-                temporary_code = ("onto.search(subclass_of= onto." + cutted_class + ")")
-                power_of_classes.update({cutted_class: list(eval(temporary_code))})
-            for key, value in sorted(power_of_classes.items()):
-                list_of_classes_with_powers.append(str(len([item for item in value if item])) + '.' + key)
+                list_of_classes_with_powers.append(str(len(classes[one_class])) + '.' + one_class)
             return list_of_classes_with_powers
 
         def classes_above_individuals():  # zwraca klasy w ktorych znajduje sie inwdywiduum (funkcja tylko dla indywiduum)
@@ -135,9 +130,9 @@ def one_word():
                 classes_above_class_result.update({one: classes_above_class_result[one]})
             return classes_above_class_result
 
-        def sorted_above():  # sortuje klasy powyzej slowa (to jest funkcja dla indywiduum i dla klasy)
+        def sorted_above():
             def comparision():
-                dict_for_going_up = dict()
+                dict_for_going_up = {}
                 dict_for_going_up.update(classes_above_individuals())
                 dict_for_going_up.update(classes_above_class())
                 one_object_classes = (dict_for_going_up[value_from_onclick])
@@ -150,7 +145,7 @@ def one_word():
                             one_object_classes[index] = two
                 else:
                     pass
-                return sorted(one_object_classes, reverse=True)
+                return sorted(one_object_classes)
 
             def updated_hierarchy_of_classes():
                 temp = comparision()
@@ -165,7 +160,12 @@ def one_word():
 
         def class_directly_above():  # oddaje bezposrednią nadklase dla slowa
             class_above = sorted_above()
-            return class_above[-1]
+            if class_above == []:
+                return []
+            else:
+                return class_above[-1]
+
+        print(class_directly_above())
 
         def instances_from_the_same_class():  # jesli slowo = instancja -> wyswietl wszystkie instancje z tej samej klasy
             class_above = class_directly_above()
@@ -191,29 +191,28 @@ def one_word():
                     result.append(str(every_class).split('.')[1])
             return result
 
-        properties = cut_the_object_property()
-        with onto:
-            class temporary(Thing):
-                pass
+        all_properties = cut_the_object_property()
+        all_individuals = cut_the_individual()
+
+        all_properties = cut_the_object_property()
+        all_individuals = cut_the_individual()
 
         def relations():
-            temp = temporary(str(value_from_onclick))
-            temporary_list = list()
-            for every_property in properties:
-                temp2 = getattr(temp, every_property)
-                if (temp2) == None:
-                    pass
-                elif len(temp2) == 0:
-                    pass
-                else:
-                    for i in range(len(temp2)):
-                        temp3 = list(temp2)
-                        a = value_from_onclick
-                        b = every_property
-                        c = temp3[i]
-                        temporary_list.append((str(a) + ' ' + (str(b) + ' ' + str(c).split('.')[-1])))
-            relations_result = list(set(temporary_list))
-            return relations_result
+            list_with_duplicates = list()
+            for every_individual in all_individuals:
+                for every_property in all_properties:
+                    code = "list(onto." + every_individual + "." + every_property + ")"
+                    evaluated_relations = eval(code)
+                    if evaluated_relations == []:
+                        pass
+                    else:
+                        for every in evaluated_relations:
+                            evaluated_relations_split = str(every).split('.')[-1]
+                            concatenation = str(every_individual) + ' ' + str(every_property) + ' ' + str(
+                                evaluated_relations_split)
+                            list_with_duplicates.append(concatenation)
+            relations_result = list(set(list_with_duplicates))
+            return (relations_result)
 
         def classes_below():
             eval_code = "onto.search(subclass_of= onto." + value_from_onclick + ")"
@@ -225,6 +224,7 @@ def one_word():
 
         LIST = []
 
+        print(cut_individual_list)
         # DATA FOR WORD IF WORD IS A INDIVIDUAL
         for every in cut_individual_list:
             if every == value_from_onclick:
@@ -232,7 +232,8 @@ def one_word():
                 LIST.append(INDI_val1)
                 INDI_val2 = instances_from_the_same_class()
                 LIST.append(INDI_val2)
-                INDI_val3 = relations()
+                INDI_val4 = relations()
+                INDI_val3 = [s for s in INDI_val4 if str(value_from_onclick) in s]
                 LIST.append(INDI_val3)
             else:
                 pass
@@ -304,10 +305,16 @@ def one_word():
 
 @app.route('/search_all')
 def search_all():
-    text0 = request.args.get('content', 0, type=str)
-    text2 = text0.replace(",", "")
-    text3 = text2.replace('.', '')
-    text4 = text3.split()
+    text_from_front = request.args.get('content', 0, type=str)
+    text_to_bold=text_from_front.split()
+    text_nocom = text_from_front.replace(",", "")
+    text_nocom_and_dots = text_nocom.replace('.', '')
+    text = text_nocom_and_dots.split()
+    text_ready_to_use = []
+    for every_word in text:
+        word = every_word
+        big_word = word.capitalize()
+        text_ready_to_use.append(big_word)
     onto_list_classes_raw = list(onto.classes())
     onto_list_classes = list(onto_list_classes_raw)
     onto_list_individuals_raw = list(onto.individuals())
@@ -318,17 +325,20 @@ def search_all():
     onto_list = []
     onto_list.extend(onto_list_raw)
     onto_list = [str(i) for i in onto_list]
-    search_all_resp=[]
-    for every_class in onto_list:
-        search_all_resp.append(str(every_class).split('.')[1])
-    search_all_resp2 = list(set(text4).intersection(search_all_resp))
+    search_all_resp = []
+    for every in onto_list:
+        search_all_resp.append(str(every).split('.')[1])
+    search_all_resp2 = list(set(text_ready_to_use).intersection(search_all_resp))
+    list_to_swap = []
+    index_list = ([i for i, item in enumerate(text_ready_to_use) if item in search_all_resp2])
+    for every_index in index_list:
+        word = text_to_bold[every_index]
+        list_to_swap.append(word)
     response_search_all_list2 = []
-    response_search_all_list2.extend(search_all_resp2)
+    response_search_all_list2.extend(list_to_swap)
     response_search_all_list2 = [str(i) for i in response_search_all_list2]
     return jsonify(response_search_all_list=response_search_all_list2)
 
 
 if __name__ == "__main__":
     app.run()
-
-
